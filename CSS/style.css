@@ -22,19 +22,23 @@ body {
     text-align: center;
     line-height: 36px;
 }
-.link span:first-child {
-    display: block;
-    transition: 0.1s;
+.link::before {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    top: 0;
+    Width: 100%;
     transform: translateX(-100%);
+    transition: 0.3s;
 }
-.link span:last-child {
+.link span {
     display: block;
-    transition: 0.1s;
-    margin-top: -36px;
+    transition: 0.3s;
 }
-.link:hover span:first-child {
+.link:hover::before {
     transform: translateX(0);
 }
-.link:hover span:last-child {
+.link:hover span {
     transform: translateX(100%);
 }
+
